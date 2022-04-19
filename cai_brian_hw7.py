@@ -25,7 +25,8 @@ for line in lines:
 domain = np.flip(domain)
 graph_range = np.flip(graph_range)
              
-integral = np.trapz(graph_range,domain) * u.erg/u.second
+integral = np.trapz(graph_range,domain) * u.Lsun
+integral = integral.to(u.erg/u.second)
 print(integral)
 
 fig, figure = plt.subplots()
